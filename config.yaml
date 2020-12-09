@@ -1,0 +1,45 @@
+seed: 1 # Initialization for the random number generator
+root_dir: experiments # Root folder to save the model and TensorBoard data
+dataset:
+  name: 20ng
+  params:
+    data_dir: ./data/20ng
+    batch_size: 64
+    num_workers: 0
+model:
+  name: etm
+  params:
+    num_topics: 50 # Number of topics
+    vocab_size: null # Number of words in the vocabulary. This will be filled automatically
+    t_hidden_size: 128 # Dimension of the hidden layer of the inference NNs
+    rho_size: 300 # Dimension of the embedding spac
+    theta_act: relu # Non-linear activation function for the NNs
+    enc_drop: 0.3 # Percentage of dropout
+optimizer:
+  name: adam
+  params:
+    lr: 0.002
+    weight_decay: 1.2e-6 # L2 regularization
+scheduler:
+  name: step_lr
+  params:
+    step_size: 10
+    gamma: 0.5
+trainer:
+  max_epochs: 10 # Maximum number of epochs to train
+  min_epochs: 1 # Min number of epochs to train
+  limit_train_batches: 1.0
+  limit_val_batches: 1.0
+  limit_test_batches: 1.0
+  check_val_every_n_epoch: 2
+  progress_bar_refresh_rate: 1
+  flush_logs_every_n_steps: 100
+  log_every_n_steps: 2 # How often to add logging rows (does not write to disk)
+  precision: 32
+  automatic_optimization: True
+  terminate_on_nan: True
+  auto_select_gpus: True
+  deterministic: True
+  gpus: null # number of gpus to train on (int) or which GPUs to train on (list or str) applied per node
+  num_sanity_val_steps: 2
+  track_grad_norm: -1 # Otherwise tracks that norm (2 for 2-norm)

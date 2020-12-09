@@ -1,0 +1,7 @@
+torch==1.7.0
+gensim==3.8.0
+scipy==1.5.2
+torchvision==0.8.1
+pytorch_lightning==1.0.8
+numpy==1.19.2
+PyYAML==5.3.1
