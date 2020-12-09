@@ -48,8 +48,6 @@ checkpoint = ModelCheckpoint(monitor='val_ELBO', mode='max',
 early_stopping = EarlyStopping('val_ELBO', mode='max', min_delta=0.0, patience=10)
 
 ckpt_file = newest(save_dir_ckpt)
-trainer = pl.Trainer(logger=logger, callbacks=[checkpoint, early_stopping], **cfg['trainer'])
-
 if ckpt_file is not None:
     print(f'Loading model traning: {ckpt_file}')
     trainer = pl.Trainer(logger=logger, callbacks=[checkpoint, early_stopping], resume_from_checkpoint=ckpt_file,
