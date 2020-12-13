@@ -66,7 +66,7 @@ save_yaml(cfg, file_path=os.path.join(save_dir, 'hparams_full.yaml'))
 out = trainer.test()
 
 model.show_topics(data_module.vocab)
-nearest_neighbors = model.nearest_neighbors('artist', data_module.vocab)
+nearest_neighbors = model.nearest_neighbors('world', data_module.vocab)
 topic_diversity = model.get_topic_diversity(topk=10)
 data_loader = data_module.test_dataloader()
 

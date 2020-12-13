@@ -2,15 +2,20 @@
 Implementation in [Pytorch Lightning](https://pytorch-lightning.readthedocs.io/en/stable/) of the [Embedded Topic Modeling](https://arxiv.org/abs/1907.04907) (ETM) by Adji B. Dieng, Francisco J. R. Ruiz, and David M. Blei. This repository is largely based 
 on the original [code]( https://github.com/adjidieng/ETM).
 
-# Dependencies
-
-Create a conda environment 
+# Installation
+First or all, download or clone this repository and open a terminal on the root folder. Then create a conda environment with 
 
 `
 conda create --name etm-lightning python=3.7.9 --no-default-packages
 `
 
-then install pip
+and activate the conda environment
+
+`
+conda activate etm-lightning
+`
+
+Secondly, install pip
 
 `
 conda install -c anaconda pip

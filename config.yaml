@@ -26,7 +26,7 @@ scheduler:
     step_size: 10
     gamma: 0.5
 trainer:
-  max_epochs: 10 # Maximum number of epochs to train
+  max_epochs: 5 # Maximum number of epochs to train
   min_epochs: 1 # Min number of epochs to train
   limit_train_batches: 1.0
   limit_val_batches: 1.0
